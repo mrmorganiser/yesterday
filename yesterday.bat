@@ -74,10 +74,17 @@ goto CHKDAY
 if /I %mm% LSS 10 set mm=0%mm%
 if /I %dd% LSS 10 set dd=0%dd%
 
-REM Set IIS and AWS date variables
+REM Set IIS, AWS & ASRD date variables
 set IISDT=%yyyy:~2,2%%mm%%dd%
 set AWSDT=%yyyy%-%mm%-%dd%
+set ASRD=%dd%%mm%%yyyy:~2,2%
+
+REM yymmdd
 echo %IISDT%
+REM yyyy-mm-dd
 echo %AWSDT%
+REM ddmmyy
+echo %ASRD%
+
 pause
 @ECHO ON
